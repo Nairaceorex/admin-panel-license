@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            #$request->session()->regenerate();
+            $request->session()->regenerate();
 
             return response($request->user(), Response::HTTP_CREATED);
         }
